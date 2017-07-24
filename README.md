@@ -1,11 +1,11 @@
-# decision-maker
+# Decision Maker
 Http triggered lambda functions for decision making, which can be integrated with slack commands.
 
 # How this works
 
 ## Create Emojis
   - Go to your slack team, and choose `Customize Your Team` -> `Emoji`.
-  - Create the following emojis for dices. Related gifs can be found [here](http://www.xiazaizhijia.com/rjjc/100199.html)
+  - Create the following emojis for dices. Related gifs can be found [here](http://www.xiazaizhijia.com/rjjc/100199.html).
     - dice_1
     - dice_2
     - dice_3
@@ -35,11 +35,16 @@ Http triggered lambda functions for decision making, which can be integrated wit
     ```
 
 ## Deploy serverless stack
-    ```
+   - Deploy the project by running the following commands:
+    
+      ```
+      git clone https://github.com/jaypeng2015/decision-maker
+      cd decision-maker
       yarn
       yarn deploy
-    ```
-    Remember the endpoint shows in the result.
+      ```
+      
+   - Remember the endpoint shows in the result.
     
 ## Configure slack slash command
   - Go to your slack team, `Custom Integrations` -> `Slash Command` and then create a new command.
