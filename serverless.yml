@@ -1,0 +1,42 @@
+# serverless.yml
+
+service:
+  name: decision-maker
+
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev # Set the default stage used. Default is dev
+  region: ap-southeast-2 # Overwrite the default region used. Default is us-east-1
+  memorySize: 512 # Overwrite the default memory size. Default is 1024
+  timeout: 30 # The default is 6
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ec2:CreateNetworkInterface"
+        - "ec2:DescribeNetworkInterfaces"
+        - "ec2:DeleteNetworkInterface"
+      Resource:
+        - '*'
+  vpc:
+    securityGroupIds:
+      - sg-cc2f31a0
+    subnetIds:
+      - subnet-73c9531a
+      - subnet-f066f094
+
+functions:
+  roll: # A Function
+    handler: src/roll.handler # The file and module for this specific function.
+    description: Returns random results for a dice or a coin.
+    events: # The Events that trigger this Function
+      - http: # This creates an API Gateway HTTP endpoint which can be used to trigger this function.  Learn more in "events/apigateway"
+          path: roll # Path for this endpoint
+          method: post # HTTP method for this endpoint
+          cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
+          private: false # Requires clients to add API keys values in the `x-api-key` header of their request

@@ -1,0 +1,48 @@
+{
+  "name": "decision-maker",
+  "version": "1.0.0",
+  "description": "Http triggered lambda functions for decision making, which can be integrated with slack commands.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-commit": "scripts/pre-commit",
+    "lint": "scripts/lint",
+    "deploy": "./node_modules/serverless/bin/serverless deploy -v",
+    "remove": "./node_modules/serverless/bin/serverless remove -v"
+  },
+  "pre-commit": "pre-commit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaypeng2015/decision-maker.git"
+  },
+  "keywords": [
+    "decision",
+    "roll",
+    "dice",
+    "coin"
+  ],
+  "engines": {
+    "node": "6.10.2"
+  },
+  "author": "Jingwei Peng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaypeng2015/decision-maker/issues"
+  },
+  "homepage": "https://github.com/jaypeng2015/decision-maker#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-lodash": "^2.4.3",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-node": "^5.1.0",
+    "lint-staged": "^4.0.1",
+    "pre-commit": "^1.2.2",
+    "serverless": "^1.17.0",
+    "serverless-plugin-include-dependencies": "^2.1.2"
+  },
+  "dependencies": {
+    "qs": "^6.5.0"
+  }
+}
