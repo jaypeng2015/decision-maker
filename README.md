@@ -56,3 +56,9 @@ Http triggered lambda functions for decision making, which can be integrated wit
   - /roll (same as /roll dice)
   - /roll coin
 
+# Known Issues
+ - Lambda Cold Start
+ 
+   It takes 10s - 15s for lambda function to do a cold start, and slack command will timeout.
+   @See [here](https://serverless.com/blog/keep-your-lambdas-warm/) for details
+   It's not fixed at the moment due to the cost. For example, it requires 4320 extra requests per month for each function if you want to warm up the container every 10 min.
