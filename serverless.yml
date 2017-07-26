@@ -14,7 +14,7 @@ provider:
   runtime: nodejs6.10
   stage: dev # Set the default stage used. Default is dev
   region: ap-southeast-2 # Overwrite the default region used. Default is us-east-1
-  memorySize: 512 # Overwrite the default memory size. Default is 1024
+  memorySize: 128 # Overwrite the default memory size. Default is 1024
   timeout: 30 # The default is 6
   iamRoleStatements:
     - Effect: "Allow"
