@@ -7,6 +7,7 @@ frameworkVersion: ">=1.0.0 <2.0.0"
 
 plugins:
   - serverless-plugin-include-dependencies
+  - serverless-plugin-warmup
 
 provider:
   name: aws
@@ -23,6 +24,16 @@ provider:
         - "ec2:DeleteNetworkInterface"
       Resource:
         - '*'
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource:
+      - Fn::Join:
+        - ':'
+        - - arn:aws:lambda
+          - Ref: AWS::Region
+          - Ref: AWS::AccountId
+          - function:${self:service}-${opt:stage, self:provider.stage}-*
   vpc:
     securityGroupIds:
       - sg-cc2f31a0
@@ -32,6 +43,7 @@ provider:
 
 functions:
   roll: # A Function
+    warmup: true
     handler: src/roll.handler # The file and module for this specific function.
     description: Returns random results for a dice or a coin.
     events: # The Events that trigger this Function
@@ -40,3 +52,9 @@ functions:
           method: post # HTTP method for this endpoint
           cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
           private: false # Requires clients to add API keys values in the `x-api-key` header of their request
+
+custom:
+  warmup:
+    schedule: 'cron(0/10 21-23,0-8 ? * MON-FRI *)' # Run WarmUP every 10 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    timeout: 20
+    prewarm: true # Run WarmUp immediately after a deployment
