@@ -55,6 +55,6 @@ functions:
 
 custom:
   warmup:
-    schedule: 'cron(0/10 21-23,0-8 ? * MON-FRI *)' # Run WarmUP every 10 minutes Mon-Fri between 8:00am and 5:55pm (UTC)
+    schedule: 'cron(0/10 21-23,0-8 ? * SUN-FRI *)' # Run WarmUP every 10 minutes SUN-FRI between 8:00am and 5:55pm (AEDT)
     timeout: 20
     prewarm: true # Run WarmUp immediately after a deployment
