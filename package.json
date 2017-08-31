@@ -37,9 +37,9 @@
     "eslint-plugin-lodash": "^2.4.3",
     "eslint-plugin-no-loops": "^0.3.0",
     "eslint-plugin-node": "^5.1.0",
-    "lint-staged": "^4.0.1",
+    "lint-staged": "^4.0.4",
     "pre-commit": "^1.2.2",
-    "serverless": "^1.17.0",
+    "serverless": "^1.21.0",
     "serverless-plugin-include-dependencies": "^2.1.2",
     "serverless-plugin-warmup": "^3.0.5-rc.1"
   },
