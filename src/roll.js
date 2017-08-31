@@ -23,7 +23,7 @@ module.exports.handler = (event, context, callback) => {
     },
     body: JSON.stringify({
       response_type: 'in_channel',
-      text: `@${body.user_name} just rolled: ${result}`,
+      text: `@${body.user_name || 'You'} just rolled: ${result}`,
     }),
   };
 
