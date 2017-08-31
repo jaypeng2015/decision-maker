@@ -8,6 +8,7 @@ module.exports.handler = (event, context, callback) => {
   }
 
   const body = qs.parse(event.body);
+  const identity = body.user_name ? `@${body.user_name}` : 'You';
   const result = body.text === 'coin'
     ? `:coin_${Math.floor((Math.random() * 2) + 1)}:`
     : `:dice_${Math.floor((Math.random() * 6) + 1)}:`;
@@ -23,7 +24,7 @@ module.exports.handler = (event, context, callback) => {
     },
     body: JSON.stringify({
       response_type: 'in_channel',
-      text: `@${body.user_name || 'You'} just rolled: ${result}`,
+      text: `${identity} just rolled: ${result}`,
     }),
   };
 
