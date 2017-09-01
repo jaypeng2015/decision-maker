@@ -34,6 +34,12 @@ provider:
           - Ref: AWS::Region
           - Ref: AWS::AccountId
           - function:${self:service}-${opt:stage, self:provider.stage}-*
+    - Effect: 'Allow',
+      Action:
+        - xray:PutTraceSegments
+        - xray:PutTelemetryRecords
+      Resource:
+        - '*'
   vpc:
     securityGroupIds:
       - sg-cc2f31a0
