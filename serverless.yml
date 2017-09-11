@@ -7,7 +7,7 @@ frameworkVersion: ">=1.0.0 <2.0.0"
 
 plugins:
   - serverless-plugin-include-dependencies
-  - serverless-plugin-warmup
+  - serverless-step-functions
 
 provider:
   name: aws
@@ -49,7 +49,6 @@ provider:
 
 functions:
   roll: # A Function
-    warmup: true
     handler: src/roll.handler # The file and module for this specific function.
     description: Returns random results for a dice or a coin.
     events: # The Events that trigger this Function
@@ -58,9 +57,3 @@ functions:
           method: post # HTTP method for this endpoint
           cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
           private: false # Requires clients to add API keys values in the `x-api-key` header of their request
-
-custom:
-  warmup:
-    schedule: 'cron(0/10 21-23,0-8 ? * SUN-FRI *)' # Run WarmUP every 10 minutes SUN-FRI between 8:00am and 5:55pm (AEDT)
-    timeout: 20
-    prewarm: true # Run WarmUp immediately after a deployment

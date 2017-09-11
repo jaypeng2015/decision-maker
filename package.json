@@ -41,7 +41,7 @@
     "pre-commit": "^1.2.2",
     "serverless": "^1.21.0",
     "serverless-plugin-include-dependencies": "^2.1.2",
-    "serverless-plugin-warmup": "^3.1.0-rc.1"
+    "serverless-step-functions": "^1.1.0"
   },
   "dependencies": {
     "qs": "^6.5.0"

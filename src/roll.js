@@ -1,12 +1,6 @@
 const qs = require('qs');
 
 module.exports.handler = (event, context, callback) => {
-  /** Immediate response for WarmUP plugin */
-  if (event.source === 'serverless-plugin-warmup') {
-    console.log('WarmUP - Lambda is warm!');
-    return callback(null, 'Lambda is warm!');
-  }
-
   const body = qs.parse(event.body);
   const identity = body.user_name ? `@${body.user_name}` : 'You';
   const result = body.text === 'coin'
