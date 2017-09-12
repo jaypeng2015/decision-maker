@@ -1,5 +1,9 @@
 # Decision Maker
 Http triggered lambda functions for decision making, which can be integrated with slack commands.
+Actually this is an example to see how to use AWS step functions for REST API and turns out it's not a good choice.
+
+ - The cold start problem makes unexpected timeout in the flow
+ - Step Functions runs asynchronously so there has to be a `parent` function to check the status of the state machine
 
 # How this works
 

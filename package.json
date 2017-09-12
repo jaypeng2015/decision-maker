@@ -19,7 +19,8 @@
     "decision",
     "roll",
     "dice",
-    "coin"
+    "coin",
+    "Step Functions"
   ],
   "engines": {
     "node": "6.10.2"
@@ -31,10 +32,10 @@
   },
   "homepage": "https://github.com/jaypeng2015/decision-maker#readme",
   "devDependencies": {
+    "aws-sdk": "^2.112.0",
     "eslint": "^4.6.1",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-lodash": "^2.4.5",
     "eslint-plugin-no-loops": "^0.3.0",
     "eslint-plugin-node": "^5.1.1",
     "lint-staged": "^4.1.0",
@@ -44,6 +45,7 @@
     "serverless-step-functions": "^1.1.0"
   },
   "dependencies": {
+    "async": "^2.5.0",
     "qs": "^6.5.0"
   }
 }

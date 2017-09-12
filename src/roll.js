@@ -1,26 +1,34 @@
-const qs = require('qs');
+const { StepFunctions } = require('aws-sdk'); // eslint-disable-line node/no-unpublished-require
+const { whilst, waterfall } = require('async');
+
+const stepfunctions = new StepFunctions({ apiVersion: '2016-11-23' });
 
 module.exports.handler = (event, context, callback) => {
-  const body = qs.parse(event.body);
-  const identity = body.user_name ? `@${body.user_name}` : 'You';
-  const result = body.text === 'coin'
-    ? `:coin_${Math.floor((Math.random() * 2) + 1)}:`
-    : `:dice_${Math.floor((Math.random() * 6) + 1)}:`;
-  const response = {
-    statusCode: 200,
-    headers: {
-      // Required for CORS support to work
-      'Access-Control-Allow-Origin': '*',
-
-      // Required for cookies, authorization headers with HTTPS
-      'Access-Control-Allow-Credentials': true,
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      response_type: 'in_channel',
-      text: `${identity} just rolled: ${result}`,
-    }),
+  const params = {
+    stateMachineArn: process.env.statemachine_arn,
+    input: JSON.stringify(event), // Step Functions takes input as a string
+    name: `roll-${Date.now()}`,
   };
 
-  callback(null, response);
+  waterfall([
+    cb => stepfunctions.startExecution(params, cb),
+    ({ executionArn }, cb) => {
+      let isRunning = true;
+      whilst(() => isRunning, (done) => {
+        setTimeout(() => {
+          stepfunctions.describeExecution({ executionArn }, (err, data) => {
+            if (err) {
+              done(err);
+            } else {
+              const { status, output } = data;
+              // Step Functions returns output as a string
+              const json = output ? JSON.parse(output) : null;
+              isRunning = status === 'RUNNING';
+              done(null, json);
+            }
+          });
+        }, 1000);
+      }, cb);
+    },
+  ], callback);
 };

@@ -1,6 +1,6 @@
 {
-  "extends": ["airbnb-base", "plugin:lodash/canonical", "plugin:node/recommended"],
-  "plugins": ["lodash", "no-loops", "node"],
+  "extends": ["airbnb-base", "plugin:node/recommended"],
+  "plugins": ["no-loops", "node"],
   "env": {
     "node": true,
     "jest": true,
@@ -8,11 +8,6 @@
   },
   "globals": {
     "chrome": true
-  },
-  "settings": {
-    "lodash": {
-      "version": 4
-    }
   },
   "rules": {
     "consistent-return": 0,
@@ -26,10 +21,6 @@
     "import/export": "error",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "indent": ["error", 2, { "SwitchCase": 1 }],
-    "lodash/chaining": ["error", "always"],
-    "lodash/prefer-constant": ["error", false],
-    "lodash/prefer-lodash-method": ["error", { "ignoreMethods": ["find", "startsWith"] }],
-    "lodash/prefer-over-quantifier": "off",
     "max-len": ["error", 120],
     "no-console": 0,
     "no-loops/no-loops": "error",
