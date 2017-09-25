@@ -57,8 +57,7 @@ provider:
     securityGroupIds:
       - sg-cc2f31a0
     subnetIds:
-      - subnet-73c9531a
-      - subnet-f066f094
+      - subnet-7ec95317
 
 functions:
   roll:
