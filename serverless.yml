@@ -8,12 +8,16 @@ frameworkVersion: ">=1.0.0 <2.0.0"
 plugins:
   - serverless-plugin-include-dependencies
   - serverless-step-functions
+  - serverless-prune-plugin
 
 package:
   individually: true
 
 custom:
   accountId: 699948603814 # can not use Ref: AWS::AccountId
+  prune:
+    automatic: true
+    number: 2
 
 provider:
   name: aws
