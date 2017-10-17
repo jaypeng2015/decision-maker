@@ -35,7 +35,7 @@ Actually this is an example to see how to use AWS step functions for REST API an
   - Activate the decisionmaker profile
 
     ```
-      export AWS_PROFILE=s1portaldev
+      export AWS_PROFILE=decisionmaker
     ```
 
 ## Deploy serverless stack
