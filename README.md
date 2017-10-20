@@ -3,7 +3,7 @@ Http triggered lambda functions for decision making, which can be integrated wit
 Actually this is an example to see how to use AWS step functions for REST API and turns out it's not a good choice.
 
  - The cold start problem makes unexpected timeout in the flow
- - Step Functions runs asynchronously so there has to be a `parent` function to check the status of the state machine
+ - Step Functions runs asynchronously so there has to be a `parent` function to check the status of the state machine if you need the output to return synchronously, so delayed response is used here.
 
 # How this works
 

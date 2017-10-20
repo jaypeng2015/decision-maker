@@ -11,6 +11,5 @@ module.exports.handler = (event, context, callback) => {
 
   stepFunctions.startExecution(params, err => callback(err, {
     statusCode: 200,
-    body: JSON.stringify({}),
   }));
 };
