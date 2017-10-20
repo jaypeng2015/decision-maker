@@ -1,6 +1,6 @@
 const { StepFunctions } = require('aws-sdk'); // eslint-disable-line node/no-unpublished-require
 
-const stepfunctions = new StepFunctions({ apiVersion: '2016-11-23' });
+const stepFunctions = new StepFunctions({ apiVersion: '2016-11-23' });
 
 module.exports.handler = (event, context, callback) => {
   const params = {
@@ -9,7 +9,7 @@ module.exports.handler = (event, context, callback) => {
     name: `roll-${Date.now()}`,
   };
 
-  stepfunctions.startExecution(params, err => callback(err, {
+  stepFunctions.startExecution(params, err => callback(err, {
     statusCode: 200,
     body: JSON.stringify({}),
   }));
