@@ -46,7 +46,7 @@
     "serverless-step-functions": "^1.2.0"
   },
   "dependencies": {
-    "async": "^2.5.0",
-    "qs": "^6.5.0"
+    "qs": "^6.5.0",
+    "request": "^2.83.0"
   }
 }
