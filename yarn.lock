@@ -2596,6 +2596,10 @@ serverless-plugin-include-dependencies@^3.0.0:
     resolve-pkg "1.0.0"
     semver "5.3.0"
 
+serverless-plugin-tracing@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/serverless-plugin-tracing/-/serverless-plugin-tracing-2.0.0.tgz#df6b8b3166ac9bb70a37c7fc875014b2369158f6"
+
 serverless-prune-plugin@^1.1.2:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/serverless-prune-plugin/-/serverless-prune-plugin-1.3.0.tgz#c5774d18fb36c14d0ef44523dc74c48b7e8cecb4"
