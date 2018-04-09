@@ -15,15 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/jaypeng2015/decision-maker.git"
   },
-  "keywords": [
-    "decision",
-    "roll",
-    "dice",
-    "coin",
-    "Step Functions"
-  ],
+  "keywords": ["decision", "roll", "dice", "coin", "Step Functions"],
   "engines": {
-    "node": "8.10.0"
+    "node": "8.10.0",
+    "npm": "5.6.0"
   },
   "author": "Jingwei Peng",
   "license": "MIT",
