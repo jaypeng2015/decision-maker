@@ -9,7 +9,9 @@ module.exports.handler = (event, context, callback) => {
     name: `roll-${Date.now()}`,
   };
 
-  stepFunctions.startExecution(params, err => callback(err, {
-    statusCode: 200,
-  }));
+  stepFunctions.startExecution(params, err =>
+    callback(err, {
+      statusCode: 200,
+    })
+  );
 };

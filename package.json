@@ -23,7 +23,7 @@
     "Step Functions"
   ],
   "engines": {
-    "node": "6.10.3"
+    "node": "8.10.0"
   },
   "author": "Jingwei Peng",
   "license": "MIT",
@@ -32,15 +32,18 @@
   },
   "homepage": "https://github.com/jaypeng2015/decision-maker#readme",
   "devDependencies": {
-    "aws-sdk": "2.128.0",
+    "aws-sdk": "^2.205.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-no-loops": "^0.3.0",
-    "eslint-plugin-node": "^5.1.1",
-    "lint-staged": "^4.2.3",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "lint-staged": "^7.0.4",
     "pre-commit": "^1.2.2",
-    "serverless": "^1.23.0",
+    "prettier": "^1.11.1",
+    "serverless": "^1.26.1",
     "serverless-plugin-include-dependencies": "^3.0.0",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-prune-plugin": "^1.1.2",
