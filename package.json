@@ -4,11 +4,12 @@
   "description": "Http triggered lambda functions for decision making, which can be integrated with slack commands.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "pre-commit": "scripts/pre-commit",
     "lint": "scripts/lint",
     "deploy": "./node_modules/serverless/bin/serverless deploy -v",
-    "remove": "./node_modules/serverless/bin/serverless remove -v"
+    "remove": "./node_modules/serverless/bin/serverless remove -v",
+    "release": "semantic-release --debug"
   },
   "pre-commit": "pre-commit",
   "repository": {
@@ -33,6 +34,8 @@
   },
   "homepage": "https://github.com/jaypeng2015/decision-maker#readme",
   "devDependencies": {
+    "@semantic-release/exec": "^2.3.0",
+    "@semantic-release/git": "^7.0.1",
     "aws-sdk": "^2.205.0",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
@@ -41,9 +44,11 @@
     "eslint-plugin-no-loops": "^0.3.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^23.4.1",
     "lint-staged": "^7.0.4",
     "pre-commit": "^1.2.2",
     "prettier": "^1.12.0",
+    "semantic-release": "^15.8.1",
     "serverless": "^1.26.1",
     "serverless-plugin-include-dependencies": "^3.0.0",
     "serverless-plugin-tracing": "^2.0.0",
