@@ -6,19 +6,23 @@ service:
 frameworkVersion: ">=1.0.0 <2.0.0"
 
 plugins:
-  - serverless-plugin-include-dependencies
-  - serverless-step-functions
-  - serverless-prune-plugin
+  - serverless-pseudo-parameters
+  - serverless-webpack
+  - serverless-offline
   - serverless-plugin-tracing
+  - serverless-prune-plugin
+  - serverless-step-functions
+  - serverless-step-functions-offline
+
+custom:
+  stepFunctionsOffline:
+    ParseRequestState: parseRequest
+    RollDiceState: rollDice
+    RollCoinState: rollCoin
+    createResponseState: createResponse
 
 package:
   individually: true
-
-custom:
-  accountId: 699948603814 # can not use Ref: AWS::AccountId
-  prune:
-    automatic: true
-    number: 1
 
 provider:
   name: aws
@@ -44,7 +48,7 @@ functions:
   roll:
     handler: src/roll.handler # The file and module for this specific function.
     environment:
-      statemachine_arn: ${self:resources.Outputs.RollStateMachineARN.Value}
+      STATE_MACHINE_ARN: ${self:resources.Outputs.RollStateMachineARN.Value}
     events: # The Events that trigger this Function
         - http: # This creates an API Gateway HTTP endpoint which can be used to trigger this function.  Learn more in "events/apigateway"
             path: roll # Path for this endpoint
@@ -74,7 +78,7 @@ stepFunctions:
         States:
           ParseRequestState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-parseRequest
+            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-parseRequest
             Next: ChoiceState
           ChoiceState:
             Type: Choice
@@ -88,18 +92,18 @@ stepFunctions:
             Default: DefaultState
           RollDiceState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-rollDice
+            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollDice
             Next: createResponseState
           RollCoinState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-rollCoin
+            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollCoin
             Next: createResponseState
           DefaultState:
             Type: Fail
             Cause: "No Matches!"
           createResponseState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:${self:custom.accountId}:function:${self:service}-${opt:stage}-createResponse
+            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-createResponse
             End: true
 
 resources:

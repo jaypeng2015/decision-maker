@@ -5,6 +5,11 @@ const request = require('request');
 
 module.exports.handler = (event, context, callback) => {
   const { identity, text, responseUrl } = event;
+  if (!responseUrl) {
+    callback();
+    return;
+  }
+
   request(
     {
       url: responseUrl,

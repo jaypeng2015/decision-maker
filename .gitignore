@@ -59,4 +59,5 @@ typings/
 
 # serverless
 .serverless
+.webpack
 

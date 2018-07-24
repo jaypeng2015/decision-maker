@@ -4,12 +4,13 @@
   "description": "Http triggered lambda functions for decision making, which can be integrated with slack commands.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "scripts/test",
     "pre-commit": "scripts/pre-commit",
     "lint": "scripts/lint",
     "deploy": "./node_modules/serverless/bin/serverless deploy -v",
     "remove": "./node_modules/serverless/bin/serverless remove -v",
-    "release": "semantic-release --debug"
+    "release": "semantic-release --debug",
+    "start": "serverless offline start"
   },
   "pre-commit": "pre-commit",
   "repository": {
@@ -24,7 +25,7 @@
     "Step Functions"
   ],
   "engines": {
-    "node": "8.10.0",
+    "node": "8.11.3",
     "npm": "5.6.0"
   },
   "author": "Jingwei Peng",
@@ -36,7 +37,9 @@
   "devDependencies": {
     "@semantic-release/exec": "^2.3.0",
     "@semantic-release/git": "^7.0.1",
-    "aws-sdk": "^2.205.0",
+    "babel-loader": "7.1.5",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-stage-3": "6.24.1",
     "eslint": "^4.7.2",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-config-prettier": "^2.9.0",
@@ -44,18 +47,23 @@
     "eslint-plugin-no-loops": "^0.3.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-prettier": "^2.6.0",
-    "jest": "^23.4.1",
     "lint-staged": "^7.0.4",
     "pre-commit": "^1.2.2",
     "prettier": "^1.12.0",
     "semantic-release": "^15.8.1",
     "serverless": "^1.26.1",
-    "serverless-plugin-include-dependencies": "^3.0.0",
+    "serverless-offline": "^3.25.6",
     "serverless-plugin-tracing": "^2.0.0",
     "serverless-prune-plugin": "^1.1.2",
-    "serverless-step-functions": "^1.4.0"
+    "serverless-pseudo-parameters": "^2.1.0",
+    "serverless-step-functions": "^1.4.0",
+    "serverless-step-functions-offline": "^2.0.1",
+    "serverless-webpack": "^5.2.0",
+    "timekeeper": "^2.1.2",
+    "webpack": "^4.16.2"
   },
   "dependencies": {
+    "aws-sdk": "^2.205.0",
     "aws-xray-sdk": "^1.1.4",
     "qs": "^6.5.0",
     "request": "^2.83.0"

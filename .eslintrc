@@ -2,8 +2,7 @@
   "extends": ["airbnb-base", "plugin:node/recommended", "plugin:prettier/recommended"],
   "plugins": ["no-loops", "node"],
   "env": {
-    "node": true,
-    "mocha": true
+    "node": true
   },
   "settings": {
     "lodash": {
