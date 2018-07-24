@@ -1,5 +1,7 @@
 # Decision Maker
 
+[![Travis Status](https://travis-ci.org/jaypeng2015/decision-maker.svg?branch=master)](https://travis-ci.org/jaypeng2015/decision-maker)
+
 Http triggered AWS Step Functions for decision making, which can be integrated with slack commands.
 
 # How this works
@@ -31,10 +33,10 @@ Http triggered AWS Step Functions for decision making, which can be integrated w
     Default output format [None]: json
   ```
 
-* Activate the decisionmaker profile
+* Activate the decision-maker profile
 
   ```
-    export AWS_PROFILE=decisionmaker
+    export AWS_PROFILE=decision-maker
   ```
 
 ## Deploy serverless stack
