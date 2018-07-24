@@ -1,1 +1,4 @@
+#!/bin/bash
+
+# This is to verify that the webpack bundle file is not broken
 serverless step-functions-offline --stateMachine RollStateMachine
