@@ -1,6 +1,9 @@
 # Decision Maker
 
 [![Travis Status](https://travis-ci.org/jaypeng2015/decision-maker.svg?branch=master)](https://travis-ci.org/jaypeng2015/decision-maker)
+[![Dependency Status](https://david-dm.org/jaypeng2015/aws-this-week/status.svg)](https://david-dm.org/jaypeng2015/aws-this-week)
+[![devDependency Status](https://david-dm.org/jaypeng2015/aws-this-week/dev-status.svg)](https://david-dm.org/jaypeng2015/aws-this-week?type=dev)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Http triggered AWS Step Functions for decision making, which can be integrated with slack commands.
 
