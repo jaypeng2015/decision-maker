@@ -63,9 +63,9 @@
     "webpack": "4.16.3"
   },
   "dependencies": {
-    "aws-sdk": "^2.205.0",
-    "aws-xray-sdk": "^1.1.4",
-    "qs": "^6.5.0",
-    "request": "^2.83.0"
+    "aws-sdk": "2.249.1",
+    "aws-xray-sdk": "1.1.4",
+    "qs": "6.5.0",
+    "request": "2.83.0"
   }
 }
