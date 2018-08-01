@@ -25,7 +25,7 @@
     "Step Functions"
   ],
   "engines": {
-    "node": "8.11.3",
+    "node": ">= 8.10.0",
     "npm": "6.2.0"
   },
   "author": "Jingwei Peng",
