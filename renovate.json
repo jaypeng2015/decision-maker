@@ -6,5 +6,11 @@
     "major": {
       "automerge": false
     }
-  }
+  },
+  "packageRules": [
+    {
+      "packageNames": ["aws-sdk"],
+      "allowedVersions": "2.249.1"
+    }
+  ]
 }
