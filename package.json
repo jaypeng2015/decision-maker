@@ -26,7 +26,7 @@
   ],
   "engines": {
     "node": ">= 8.10.0",
-    "npm": "6.2.0"
+    "npm": "6.3.0"
   },
   "author": "Jingwei Peng",
   "license": "MIT",
