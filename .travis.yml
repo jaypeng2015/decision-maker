@@ -1,8 +1,5 @@
 language: node_js
 sudo: false
-cache:
-  directories:
-    - "node_modules"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
