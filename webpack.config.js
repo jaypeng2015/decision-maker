@@ -23,7 +23,7 @@ module.exports = {
         options: {
           presets: [
             [
-              '@babel/env',
+              '@babel/preset-env',
               {
                 targets: { node: '8.10' }, // Node version on AWS Lambda
                 useBuiltIns: 'usage',
