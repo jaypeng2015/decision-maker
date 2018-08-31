@@ -23,15 +23,20 @@ module.exports = {
         options: {
           presets: [
             [
-              'env',
+              '@babel/preset-env',
               {
                 targets: { node: '8.10' }, // Node version on AWS Lambda
-                useBuiltIns: true,
+                useBuiltIns: 'usage',
                 modules: false,
                 loose: true,
               },
             ],
-            'stage-3',
+          ],
+          plugins: [
+            '@babel/plugin-proposal-class-properties',
+            '@babel/plugin-proposal-json-strings',
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-syntax-import-meta',
           ],
         },
       },
