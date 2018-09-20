@@ -53,7 +53,7 @@
     "lint-staged": "7.2.2",
     "pre-commit": "1.2.2",
     "prettier": "1.14.3",
-    "semantic-release": "15.9.15",
+    "semantic-release": "15.9.16",
     "serverless": "1.32.0",
     "serverless-offline": "3.25.12",
     "serverless-plugin-tracing": "2.0.0",
