@@ -3,7 +3,7 @@
 service:
   name: decision-maker
 
-frameworkVersion: ">=1.0.0 <2.0.0"
+frameworkVersion: '>=1.0.0 <2.0.0'
 
 plugins:
   - serverless-pseudo-parameters
@@ -19,6 +19,7 @@ custom:
     ParseRequestState: parseRequest
     RollDiceState: rollDice
     RollCoinState: rollCoin
+    RollNumberState: rollNumber
     createResponseState: createResponse
 
 package:
@@ -50,11 +51,11 @@ functions:
     environment:
       STATE_MACHINE_ARN: ${self:resources.Outputs.RollStateMachineARN.Value}
     events: # The Events that trigger this Function
-        - http: # This creates an API Gateway HTTP endpoint which can be used to trigger this function.  Learn more in "events/apigateway"
-            path: roll # Path for this endpoint
-            method: post # HTTP method for this endpoint
-            cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
-            private: false # Requires clients to add API keys values in the `x-api-key` header of their request
+      - http: # This creates an API Gateway HTTP endpoint which can be used to trigger this function.  Learn more in "events/apigateway"
+          path: roll # Path for this endpoint
+          method: post # HTTP method for this endpoint
+          cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
+          private: false # Requires clients to add API keys values in the `x-api-key` header of their request
   parseRequest: # A Function
     handler: src/parse-request.handler # The file and module for this specific function.
     description: Parse request from slack.
@@ -64,6 +65,9 @@ functions:
   rollCoin:
     handler: src/roll-coin.handler # The file and module for this specific function.
     description: Roll a coin.
+  rollNumber:
+    handler: src/roll-number.handler # The file and module for this specific function.
+    description: Return a random number.
   createResponse:
     handler: src/create-response.handler # The file and module for this specific function.
     description: Generate response for slack.
@@ -73,7 +77,7 @@ stepFunctions:
     RollStateMachine:
       name: RollStateMachine
       definition:
-        Comment: "An example of the Amazon States Language using choice state"
+        Comment: 'An example of the Amazon States Language using choice state'
         StartAt: ParseRequestState
         States:
           ParseRequestState:
@@ -83,12 +87,15 @@ stepFunctions:
           ChoiceState:
             Type: Choice
             Choices:
-            - Variable: "$.type"
-              NumericEquals: 1
-              Next: RollDiceState
-            - Variable: "$.type"
-              NumericEquals: 2
-              Next: RollCoinState
+              - Variable: '$.type'
+                NumericEquals: 1
+                Next: RollDiceState
+              - Variable: '$.type'
+                NumericEquals: 2
+                Next: RollCoinState
+              - Variable: '$.type'
+                NumericEquals: 3
+                Next: RollNumberState
             Default: DefaultState
           RollDiceState:
             Type: Task
@@ -98,9 +105,13 @@ stepFunctions:
             Type: Task
             Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollCoin
             Next: createResponseState
+          RollNumberState:
+            Type: Task
+            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollNumber
+            Next: createResponseState
           DefaultState:
             Type: Fail
-            Cause: "No Matches!"
+            Cause: 'No Matches!'
           createResponseState:
             Type: Task
             Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-createResponse
