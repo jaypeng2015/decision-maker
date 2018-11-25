@@ -73,7 +73,7 @@
     "serverless-step-functions-offline": "2.1.1",
     "serverless-webpack": "5.2.0",
     "timekeeper": "2.1.2",
-    "webpack": "4.26.0"
+    "webpack": "4.26.1"
   },
   "dependencies": {
     "aws-sdk": "2.290.0",
