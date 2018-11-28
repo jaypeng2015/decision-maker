@@ -63,7 +63,7 @@
     "husky": "1.2.0",
     "lint-staged": "8.1.0",
     "prettier": "1.15.2",
-    "semantic-release": "15.12.2",
+    "semantic-release": "15.12.3",
     "serverless": "1.33.2",
     "serverless-offline": "3.31.3",
     "serverless-plugin-tracing": "2.0.0",
