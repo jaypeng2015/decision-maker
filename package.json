@@ -62,7 +62,7 @@
     "eslint-plugin-prettier": "3.0.0",
     "husky": "1.2.0",
     "lint-staged": "8.1.0",
-    "prettier": "1.15.2",
+    "prettier": "1.15.3",
     "semantic-release": "15.12.3",
     "serverless": "1.34.0",
     "serverless-offline": "3.31.3",
