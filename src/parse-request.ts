@@ -1,15 +1,19 @@
-const qs = require('qs');
+import { Callback, Context } from 'aws-lambda';
+import * as qs from 'qs';
 
-module.exports.handler = (event, context, callback) => {
+import { RollType } from './constants';
+import State from './state';
+
+export const handler = (event: State, context: Context, callback: Callback) => {
   const body = qs.parse(event.body);
   const identity = body.user_id ? `<@${body.user_id}>` : 'You';
-  let type = 1;
+  let type = RollType.DICE;
   if (body.text) {
     // eslint-disable-next-line no-restricted-globals
     if (!isNaN(body.text.trim())) {
-      type = 3;
+      type = RollType.NUMBER;
     } else if (body.text.includes('coin')) {
-      type = 2;
+      type = RollType.COIN;
     }
   }
   const responseUrl = body.response_url;
