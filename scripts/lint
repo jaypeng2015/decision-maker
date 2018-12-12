@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo 'Starting linting ...'
-eslint -c .eslintrc ./src --ext .js
-echo 'Finished linting.'

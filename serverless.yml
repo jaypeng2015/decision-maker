@@ -8,11 +8,15 @@ frameworkVersion: '>=1.0.0 <2.0.0'
 plugins:
   - serverless-pseudo-parameters
   - serverless-webpack
-  - serverless-offline
   - serverless-plugin-tracing
-  - serverless-prune-plugin
   - serverless-step-functions
   - serverless-step-functions-offline
+  - serverless-offline
+  - serverless-prune-plugin
+
+package:
+  # https://github.com/serverless-heaven/serverless-webpack/issues/299
+  individually: false
 
 custom:
   stepFunctionsOffline:
@@ -21,9 +25,6 @@ custom:
     RollCoinState: rollCoin
     RollNumberState: rollNumber
     createResponseState: createResponse
-
-package:
-  individually: true
 
 provider:
   name: aws
