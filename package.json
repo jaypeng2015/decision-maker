@@ -61,7 +61,7 @@
     "serverless-step-functions": "1.9.0",
     "serverless-step-functions-offline": "2.1.2",
     "serverless-webpack": "5.2.0",
-    "source-map-support": "0.5.9",
+    "source-map-support": "0.5.10",
     "timekeeper": "2.1.2",
     "ts-jest": "23.10.5",
     "ts-loader": "5.3.3",
