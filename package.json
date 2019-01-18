@@ -45,7 +45,7 @@
     "@semantic-release/exec": "3.3.2",
     "@semantic-release/git": "7.0.8",
     "@types/aws-lambda": "8.10.17",
-    "@types/jest": "23.3.12",
+    "@types/jest": "23.3.13",
     "@types/lodash": "4.14.120",
     "@types/node": "10.12.18",
     "@types/request": "2.48.1",
