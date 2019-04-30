@@ -60,7 +60,7 @@
     "serverless-pseudo-parameters": "2.4.0",
     "serverless-step-functions": "1.17.1",
     "serverless-step-functions-offline": "2.1.2",
-    "serverless-webpack": "5.2.0",
+    "serverless-webpack": "5.3.0",
     "source-map-support": "0.5.12",
     "timekeeper": "2.2.0",
     "ts-jest": "24.0.2",
