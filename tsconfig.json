@@ -8,6 +8,6 @@
     "preserveConstEnums": true,
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "webpack"],
+  "exclude": ["node_modules", "webpack", "**/*.test.ts"],
   "types": ["typePatches"]
 }
