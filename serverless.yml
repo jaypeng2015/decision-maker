@@ -19,6 +19,10 @@ package:
   individually: false
 
 custom:
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
   stepFunctionsOffline:
     ParseRequestState: parseRequest
     RollDiceState: rollDice
