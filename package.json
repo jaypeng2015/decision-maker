@@ -42,7 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
-    "@semantic-release/exec": "3.3.3",
+    "@semantic-release/exec": "3.3.4",
     "@semantic-release/git": "7.0.12",
     "@types/aws-lambda": "8.10.27",
     "@types/jest": "24.0.15",
@@ -52,7 +52,7 @@
     "husky": "2.5.0",
     "jest": "24.8.0",
     "lint-staged": "8.2.1",
-    "semantic-release": "15.13.16",
+    "semantic-release": "15.13.17",
     "serverless": "1.45.1",
     "serverless-offline": "5.5.0",
     "serverless-pseudo-parameters": "2.4.0",
