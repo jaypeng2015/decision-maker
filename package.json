@@ -46,7 +46,7 @@
     "@semantic-release/git": "7.0.13",
     "@types/aws-lambda": "8.10.27",
     "@types/jest": "24.0.15",
-    "@types/lodash": "4.14.134",
+    "@types/lodash": "4.14.135",
     "@types/node": "10.12.24",
     "@types/request": "2.48.1",
     "husky": "2.6.0",
