@@ -54,7 +54,7 @@
     "lint-staged": "9.1.0",
     "semantic-release": "15.13.18",
     "serverless": "1.46.1",
-    "serverless-offline": "5.6.1",
+    "serverless-offline": "5.7.0",
     "serverless-pseudo-parameters": "2.4.0",
     "serverless-step-functions": "1.25.0",
     "serverless-step-functions-offline": "2.1.2",
