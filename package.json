@@ -42,7 +42,7 @@
   "devDependencies": {
     "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.1.0",
-    "@semantic-release/exec": "3.3.5",
+    "@semantic-release/exec": "3.3.6",
     "@semantic-release/git": "7.0.16",
     "@types/aws-lambda": "8.10.31",
     "@types/jest": "24.0.17",
