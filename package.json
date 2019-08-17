@@ -72,7 +72,7 @@
   "dependencies": {
     "aws-sdk": "2.437.0",
     "aws-xray-sdk": "2.3.4",
-    "qs": "6.7.0",
+    "qs": "6.8.0",
     "request": "2.88.0"
   },
   "jest": {
