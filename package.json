@@ -53,7 +53,7 @@
     "jest": "24.9.0",
     "lint-staged": "9.2.4",
     "semantic-release": "15.13.24",
-    "serverless": "1.50.0",
+    "serverless": "1.50.1",
     "serverless-offline": "5.10.1",
     "serverless-pseudo-parameters": "2.4.0",
     "serverless-step-functions": "2.6.0",
