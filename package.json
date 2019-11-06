@@ -70,7 +70,7 @@
     "webpack-node-externals": "1.7.2"
   },
   "dependencies": {
-    "aws-sdk": "2.437.0",
+    "aws-sdk": "2.488.0",
     "aws-xray-sdk": "2.3.4",
     "qs": "6.8.0",
     "request": "2.88.0"
