@@ -10,7 +10,7 @@
   "packageRules": [
     {
       "packageNames": ["aws-sdk"],
-      "allowedVersions": "2.488.0"
+      "allowedVersions": "2.536.0"
     }
   ]
 }
