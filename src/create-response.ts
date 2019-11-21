@@ -2,8 +2,8 @@ import { Callback, Context } from 'aws-lambda';
 import * as awsXRay from 'aws-xray-sdk';
 import * as http from 'http';
 import * as https from 'https';
-awsXRay.captureHTTPsGlobal(http);
-awsXRay.captureHTTPsGlobal(https);
+awsXRay.captureHTTPsGlobal(http, true);
+awsXRay.captureHTTPsGlobal(https, true);
 
 import State from './state';
 import * as request from 'request';
