@@ -51,7 +51,7 @@
     "@types/request": "2.48.3",
     "husky": "3.1.0",
     "jest": "24.9.0",
-    "lint-staged": "9.4.3",
+    "lint-staged": "9.5.0",
     "semantic-release": "15.13.31",
     "serverless": "1.58.0",
     "serverless-offline": "5.12.0",
