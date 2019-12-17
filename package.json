@@ -48,7 +48,7 @@
     "@types/jest": "24.0.23",
     "@types/lodash": "4.14.149",
     "@types/node": "10.12.24",
-    "@types/request": "2.48.3",
+    "@types/request": "2.48.4",
     "husky": "3.1.0",
     "jest": "24.9.0",
     "lint-staged": "9.5.0",
