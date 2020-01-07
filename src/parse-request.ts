@@ -1,5 +1,5 @@
 import { Callback, Context } from 'aws-lambda';
-import * as qs from 'qs';
+import qs from 'qs';
 
 import { RollType } from './constants';
 import State from './state';

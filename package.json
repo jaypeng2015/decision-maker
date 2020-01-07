@@ -48,7 +48,6 @@
     "@types/jest": "24.0.25",
     "@types/lodash": "4.14.149",
     "@types/node": "10.12.24",
-    "@types/request": "2.48.4",
     "husky": "4.0.1",
     "jest": "24.9.0",
     "lint-staged": "9.5.0",
@@ -72,8 +71,8 @@
   "dependencies": {
     "aws-sdk": "2.536.0",
     "aws-xray-sdk": "2.5.0",
-    "qs": "6.9.1",
-    "request": "2.88.0"
+    "axios": "0.19.1",
+    "qs": "6.9.1"
   },
   "jest": {
     "moduleFileExtensions": [
