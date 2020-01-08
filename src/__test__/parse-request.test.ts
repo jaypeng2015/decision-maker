@@ -1,4 +1,4 @@
-import { handler } from './parse-request';
+import { handler } from '../parse-request';
 import mockContext from './mock-context';
 
 describe('parse request', () => {

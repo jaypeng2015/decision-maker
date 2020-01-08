@@ -7,11 +7,11 @@ export default {
   fail: noop,
   functionName: '',
   functionVersion: '',
-  getRemainingTimeInMillis: () => 0,
+  getRemainingTimeInMillis: (): number => 0,
   invokedFunctionArn: '',
   logGroupName: '',
   logStreamName: '',
-  memoryLimitInMB: 0,
+  memoryLimitInMB: '0',
   succeed: noop,
   timeInMillis: 0,
 };

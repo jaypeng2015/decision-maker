@@ -1,6 +1,6 @@
 import { includes } from 'lodash';
 
-import { handler } from './roll-dice';
+import { handler } from '../roll-dice';
 import mockContext from './mock-context';
 
 describe('roll dice', () => {
