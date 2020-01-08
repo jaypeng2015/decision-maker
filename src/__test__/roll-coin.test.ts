@@ -1,18 +1,18 @@
-import { toNumber } from 'lodash';
+import { includes } from 'lodash';
 
-import { handler } from './roll-number';
+import { handler } from '../roll-coin';
 import mockContext from './mock-context';
 
-describe('roll number', () => {
-  it('should get a random number', done => {
+describe('roll coin', () => {
+  it('should get a random head and tail', done => {
     handler(
-      { number: 5, responseUrl: 'responseUrl', identity: 'identity' },
+      { responseUrl: 'responseUrl', identity: 'identity' },
       mockContext,
       (err, { text, responseUrl, identity }) => {
         expect(err).toBeNull();
         expect(responseUrl).toBe('responseUrl');
         expect(identity).toBe('identity');
-        expect(toNumber(text)).toBeLessThanOrEqual(5);
+        expect(includes([':coin_1:', ':coin_2:'], text)).toBe(true);
         done();
       }
     );

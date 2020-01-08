@@ -4,11 +4,10 @@
     "lib": ["es2019"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "plugins": [{ "name": "typescript-tslint-plugin" }],
     "preserveConstEnums": true,
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es2019"
   },
-  "exclude": ["node_modules", "webpack", "**/*.test.ts"]
+  "exclude": ["node_modules"]
 }

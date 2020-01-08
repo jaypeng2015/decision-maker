@@ -4,7 +4,7 @@
   "description": "Http triggered lambda functions for decision making, which can be integrated with slack commands.",
   "scripts": {
     "deploy": "./node_modules/serverless/bin/serverless deploy -v",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint": "eslint src --ext .js,.ts",
     "release": "semantic-release --debug",
     "remove": "./node_modules/serverless/bin/serverless remove -v",
     "start": "serverless offline start",
@@ -12,12 +12,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "tsc --noEmit && lint-staged",
       "commit-msg": "echo $HUSKY_GIT_PARAMS && commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "*.ts": "tslint -c tslint.json 'src/**/*.ts'"
+    "*.ts": "eslint src --ext .js,.ts"
   },
   "repository": {
     "type": "git",
@@ -48,9 +48,18 @@
     "@types/jest": "24.0.25",
     "@types/lodash": "4.14.149",
     "@types/node": "10.12.24",
+    "@typescript-eslint/eslint-plugin": "2.15.0",
+    "@typescript-eslint/eslint-plugin-tslint": "2.15.0",
+    "@typescript-eslint/parser": "2.15.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.9.0",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-jest": "23.3.0",
+    "eslint-plugin-prettier": "3.1.2",
     "husky": "4.0.1",
     "jest": "24.9.0",
     "lint-staged": "9.5.0",
+    "prettier": "1.19.1",
     "semantic-release": "15.14.0",
     "serverless": "1.60.5",
     "serverless-offline": "5.12.1",
@@ -62,8 +71,6 @@
     "timekeeper": "2.2.0",
     "ts-jest": "24.3.0",
     "ts-loader": "6.2.1",
-    "tslint": "5.20.1",
-    "tslint-config-prettier": "1.18.0",
     "typescript": "3.7.4",
     "webpack": "4.41.5",
     "webpack-node-externals": "1.7.2"

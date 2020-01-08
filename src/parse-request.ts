@@ -4,7 +4,7 @@ import qs from 'qs';
 import { RollType } from './constants';
 import State from './state';
 
-export const handler = (event: State, context: Context, callback: Callback) => {
+export const handler = (event: State, context: Context, callback: Callback): void => {
   const body = qs.parse(event.body);
   const identity = body.user_id ? `<@${body.user_id}>` : 'You';
   let type = RollType.DICE;

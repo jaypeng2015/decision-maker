@@ -8,7 +8,7 @@ awsXRay.captureHTTPsGlobal(https, true);
 
 import State from './state';
 
-export const handler = (event: State, context: Context, callback: Callback) => {
+export const handler = (event: State, context: Context, callback: Callback): void => {
   const { identity, text, responseUrl } = event;
   if (!responseUrl) {
     callback();
