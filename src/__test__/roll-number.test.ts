@@ -1,4 +1,4 @@
-import { toNumber } from 'lodash';
+import { toNumber, split } from 'lodash';
 
 import { handler } from '../roll-number';
 import mockContext from './mock-context';
@@ -12,7 +12,7 @@ describe('roll number', () => {
         expect(err).toBeNull();
         expect(responseUrl).toBe('responseUrl');
         expect(identity).toBe('identity');
-        expect(toNumber(text)).toBeLessThanOrEqual(5);
+        expect(toNumber(split(text, ' ')[0])).toBeLessThanOrEqual(5);
         done();
       }
     );
