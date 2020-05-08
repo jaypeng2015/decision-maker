@@ -4,7 +4,7 @@ import { handler } from '../roll-dice';
 import mockContext from './mock-context';
 
 describe('roll dice', () => {
-  it('should get a random dice', done => {
+  it('should get a random dice', (done) => {
     handler(
       { responseUrl: 'responseUrl', identity: 'identity' },
       mockContext,

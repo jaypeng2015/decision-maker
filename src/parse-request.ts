@@ -1,22 +1,23 @@
 import { Callback, Context } from 'aws-lambda';
-import qs from 'qs';
+import querystring, { ParsedUrlQuery } from 'querystring';
+import _ from 'lodash';
 
 import { RollType } from './constants';
 import State from './state';
 
 export const handler = (event: State, context: Context, callback: Callback): void => {
-  const body = qs.parse(event.body);
-  const identity = body.user_id ? `<@${body.user_id}>` : 'You';
+  const body: ParsedUrlQuery = querystring.parse(event.body!);
+  const userId = _.get(body, 'user_id');
+  const identity = userId ? `<@${userId}>` : 'You';
   let type = RollType.DICE;
-  if (body.text) {
-    // eslint-disable-next-line no-restricted-globals
-    if (!isNaN(body.text.trim())) {
+  if (_.isString(body.text) && _.isEmpty(body.text)) {
+    if (_.isNaN(_.trim(body.text))) {
       type = RollType.NUMBER;
     } else if (body.text.includes('coin')) {
       type = RollType.COIN;
     }
   }
   const responseUrl = body.response_url;
-  const state = { identity, type, responseUrl, number: parseInt(body.text, 10) };
+  const state = { identity, type, responseUrl, number: _.toSafeInteger(body.text) };
   callback(null, state);
 };

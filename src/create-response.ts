@@ -21,5 +21,5 @@ export const handler = (event: State, context: Context, callback: Callback): voi
       text: `${identity} just rolled: ${text}`,
     })
     .then(() => callback())
-    .catch(err => callback(err));
+    .catch((err) => callback(err));
 };

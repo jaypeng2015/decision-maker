@@ -4,7 +4,7 @@ import { handler } from '../roll-coin';
 import mockContext from './mock-context';
 
 describe('roll coin', () => {
-  it('should get a random head and tail', done => {
+  it('should get a random head and tail', (done) => {
     handler(
       { responseUrl: 'responseUrl', identity: 'identity' },
       mockContext,
