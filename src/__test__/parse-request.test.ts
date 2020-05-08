@@ -81,11 +81,11 @@ describe('parse request', () => {
     resource: '/roll',
     stageVariables: null,
   };
-  it('should get init state from the request', done => {
+  it('should get init state from the request', (done) => {
     handler(event, mockContext, (err, state) => {
       expect(state).toMatchObject({
         identity: '<@U0EUT7XDH>',
-        number: NaN,
+        number: 0,
         responseUrl: 'https://hooks.slack.com/commands/T0BHNMKGT/500366777506/abcde',
         type: 1,
       });
