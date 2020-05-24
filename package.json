@@ -60,7 +60,7 @@
     "jest": "26.0.1",
     "lint-staged": "10.2.6",
     "prettier": "2.0.5",
-    "semantic-release": "17.0.7",
+    "semantic-release": "17.0.8",
     "serverless": "1.71.3",
     "serverless-offline": "5.12.1",
     "serverless-pseudo-parameters": "2.5.0",
