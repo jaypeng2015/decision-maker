@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import { handler } from '../parse-request';
 import mockContext from './mock-context';
 
@@ -81,13 +83,44 @@ describe('parse request', () => {
     resource: '/roll',
     stageVariables: null,
   };
-  it('should get init state from the request', (done) => {
+
+  it('role a dice', (done) => {
     handler(event, mockContext, (err, state) => {
       expect(state).toMatchObject({
         identity: '<@U0EUT7XDH>',
         number: 0,
         responseUrl: 'https://hooks.slack.com/commands/T0BHNMKGT/500366777506/abcde',
         type: 1,
+      });
+      done();
+    });
+  });
+
+  it('roll a coin', (done) => {
+    const coinEvent = _.cloneDeep(event);
+    coinEvent.body =
+      'token=iBfpqOzx7EVBFovOfpmDlp4t&team_id=T0BHNMKGT&team_domain=inlight-media&channel_id=D1KRE8EAY&channel_name=directmessage&user_id=U0EUT7XDH&user_name=jaypeng&command=%2Froll&text=coin&response_url=https%3A%2F%2Fhooks.slack.com%2Fcommands%2FT0BHNMKGT%2F500366777506%2Fabcde';
+    handler(coinEvent, mockContext, (err, state) => {
+      expect(state).toMatchObject({
+        identity: '<@U0EUT7XDH>',
+        number: 0,
+        responseUrl: 'https://hooks.slack.com/commands/T0BHNMKGT/500366777506/abcde',
+        type: 2,
+      });
+      done();
+    });
+  });
+
+  it('roll a number', (done) => {
+    const numberEvent = _.cloneDeep(event);
+    numberEvent.body =
+      'token=iBfpqOzx7EVBFovOfpmDlp4t&team_id=T0BHNMKGT&team_domain=inlight-media&channel_id=D1KRE8EAY&channel_name=directmessage&user_id=U0EUT7XDH&user_name=jaypeng&command=%2Froll&text=100&response_url=https%3A%2F%2Fhooks.slack.com%2Fcommands%2FT0BHNMKGT%2F500366777506%2Fabcde';
+    handler(numberEvent, mockContext, (err, state) => {
+      expect(state).toMatchObject({
+        identity: '<@U0EUT7XDH>',
+        number: 100,
+        responseUrl: 'https://hooks.slack.com/commands/T0BHNMKGT/500366777506/abcde',
+        type: 3,
       });
       done();
     });

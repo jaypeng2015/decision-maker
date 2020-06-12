@@ -10,8 +10,8 @@ export const handler = (event: State, context: Context, callback: Callback): voi
   const userId = _.get(body, 'user_id');
   const identity = userId ? `<@${userId}>` : 'You';
   let type = RollType.DICE;
-  if (_.isString(body.text) && _.isEmpty(body.text)) {
-    if (_.isNaN(_.trim(body.text))) {
+  if (_.isString(body.text) && !_.isEmpty(body.text)) {
+    if (/^\d+$/.test(_.trim(body.text))) {
       type = RollType.NUMBER;
     } else if (body.text.includes('coin')) {
       type = RollType.COIN;
