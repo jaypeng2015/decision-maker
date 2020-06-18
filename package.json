@@ -64,7 +64,7 @@
     "serverless": "1.73.1",
     "serverless-offline": "5.12.1",
     "serverless-pseudo-parameters": "2.5.0",
-    "serverless-step-functions": "2.19.0",
+    "serverless-step-functions": "2.21.0",
     "serverless-step-functions-offline": "2.1.4",
     "serverless-webpack": "5.3.2",
     "source-map-support": "0.5.19",
