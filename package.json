@@ -61,7 +61,7 @@
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "semantic-release": "17.1.1",
-    "serverless": "1.75.1",
+    "serverless": "1.76.0",
     "serverless-offline": "5.12.1",
     "serverless-pseudo-parameters": "2.5.0",
     "serverless-step-functions": "2.21.1",
