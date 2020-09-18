@@ -73,7 +73,7 @@
     "ts-loader": "8.0.4",
     "typescript": "3.9.7",
     "webpack": "4.44.2",
-    "webpack-node-externals": "1.7.2"
+    "webpack-node-externals": "2.5.2"
   },
   "dependencies": {
     "aws-sdk": "2.536.0",
