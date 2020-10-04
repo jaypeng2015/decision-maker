@@ -3,7 +3,7 @@
 service:
   name: decision-maker
 
-frameworkVersion: '>=1.0.0 <2.0.0'
+frameworkVersion: '2'
 
 plugins:
   - serverless-pseudo-parameters
