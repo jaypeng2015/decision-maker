@@ -30,9 +30,6 @@
     "coin",
     "Step Functions"
   ],
-  "engines": {
-    "node": ">= 8.10.0"
-  },
   "author": "Jingwei Peng",
   "license": "MIT",
   "bugs": {
@@ -61,7 +58,7 @@
     "lint-staged": "10.4.0",
     "prettier": "2.1.2",
     "semantic-release": "17.1.2",
-    "serverless": "1.83.0",
+    "serverless": "2.4.0",
     "serverless-offline": "5.12.1",
     "serverless-pseudo-parameters": "2.5.0",
     "serverless-step-functions": "2.26.0",
