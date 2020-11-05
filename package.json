@@ -43,7 +43,7 @@
     "@semantic-release/git": "9.0.0",
     "@types/aws-lambda": "8.10.64",
     "@types/jest": "26.0.15",
-    "@types/lodash": "4.14.164",
+    "@types/lodash": "4.14.165",
     "@types/node": "10.12.24",
     "@typescript-eslint/eslint-plugin": "4.6.1",
     "@typescript-eslint/eslint-plugin-tslint": "4.6.1",
