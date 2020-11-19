@@ -9,6 +9,7 @@ on:
 
 jobs:
   ci-cd:
+    name: Continuous Delivery
     runs-on: ubuntu-latest
     if: !contains(github.event.head_commit.message , 'skip ci')
     env:
@@ -25,9 +26,9 @@ jobs:
         id: cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-npm-
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
