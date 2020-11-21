@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Http triggered lambda functions for decision making, which can be integrated with slack commands.",
   "scripts": {
-    "deploy": "./node_modules/serverless/bin/serverless deploy -v",
+    "deploy": "serverless deploy -v",
     "lint": "eslint src --ext .js,.ts",
     "release": "semantic-release --debug",
-    "remove": "./node_modules/serverless/bin/serverless remove -v",
+    "remove": "serverless remove -v",
     "start": "serverless offline start",
     "test": "jest"
   },
