@@ -39,3 +39,5 @@ jobs:
       - name: Deploy
         if: github.ref == 'refs/heads/master'
         run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
