@@ -1,8 +1,9 @@
-const slsw = require('serverless-webpack');
+const _ = require('lodash');
 const nodeExternals = require('webpack-node-externals');
+const slsw = require('serverless-webpack');
 
 module.exports = {
-  entry: slsw.lib.entries,
+  entry: _.mapValues(slsw.lib.entries, (value) => ['./source-map-install.js', value]),
   // output: set by the plugin
   target: 'node',
   devtool: 'source-map',
