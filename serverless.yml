@@ -88,7 +88,7 @@ stepFunctions:
         States:
           ParseRequestState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-parseRequest
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:decision-maker-${opt:stage, self:provider.stage}-parseRequest
             Next: ChoiceState
           ChoiceState:
             Type: Choice
@@ -105,22 +105,22 @@ stepFunctions:
             Default: DefaultState
           RollDiceState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollDice
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:decision-maker-${opt:stage, self:provider.stage}-rollDice
             Next: createResponseState
           RollCoinState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollCoin
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:decision-maker-${opt:stage, self:provider.stage}-rollCoin
             Next: createResponseState
           RollNumberState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-rollNumber
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:decision-maker-${opt:stage, self:provider.stage}-rollNumber
             Next: createResponseState
           DefaultState:
             Type: Fail
             Cause: 'No Matches!'
           createResponseState:
             Type: Task
-            Resource: arn:aws:lambda:${opt:region}:#{AWS::AccountId}:function:${self:service}-${opt:stage, self:provider.stage}-createResponse
+            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:decision-maker-${opt:stage, self:provider.stage}-createResponse
             End: true
 
 resources:
