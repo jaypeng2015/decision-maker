@@ -41,7 +41,7 @@
     "@commitlint/config-conventional": "11.0.0",
     "@semantic-release/exec": "5.0.0",
     "@semantic-release/git": "9.0.0",
-    "@types/aws-lambda": "8.10.64",
+    "@types/aws-lambda": "8.10.65",
     "@types/jest": "26.0.18",
     "@types/lodash": "4.14.165",
     "@types/node": "10.12.24",
